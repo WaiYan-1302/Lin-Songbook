@@ -10,7 +10,7 @@
 :root[data-theme="dark"] { --paper: #18201d; --paper-deep: #202a25; --surface: #242f29; --ink: #ecede6; --muted: #aab2aa; --line: #3d4942; --grid: #3d4942; --wood: #cf8560; --wood-dark: #e39a73; --sage: #9caf9c; --gold: #e2bd78; --shadow: 0 8px 24px rgba(0, 0, 0, .18) }
 * { box-sizing: border-box }
 html { background: var(--paper); scroll-behavior: smooth }
-body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background-color: var(--paper); background-image: repeating-linear-gradient(to right, transparent 0 29px, color-mix(in srgb, var(--grid) 42%, transparent) 29px 30px), repeating-linear-gradient(to bottom, transparent 0 29px, color-mix(in srgb, var(--grid) 42%, transparent) 29px 30px); color: var(--ink); font-size: 16px; line-height: 1.5 }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background-color: var(--paper); background-image: repeating-linear-gradient(89.82deg, transparent 0 29.35px, color-mix(in srgb, var(--grid) 30%, transparent) 29.35px 29.85px, transparent 29.85px 30.35px), repeating-linear-gradient(.16deg, transparent 0 29.1px, color-mix(in srgb, var(--grid) 30%, transparent) 29.1px 29.7px, transparent 29.7px 30.2px), repeating-linear-gradient(90.14deg, transparent 0 29.65px, color-mix(in srgb, var(--grid) 14%, transparent) 29.65px 30px), repeating-linear-gradient(-.12deg, transparent 0 29.45px, color-mix(in srgb, var(--grid) 14%, transparent) 29.45px 29.9px); color: var(--ink); font-size: 16px; line-height: 1.5 }
 button, input, select, textarea { font: inherit; color: inherit }
 button, a { -webkit-tap-highlight-color: transparent }
 button { cursor: pointer }
