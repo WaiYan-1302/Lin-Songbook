@@ -8,7 +8,7 @@ npm test
 npm run build
 ```
 
-The output is `dist/`. The build copies `index.html` to `404.html` for static hosts and includes Cloudflare’s `_redirects` file.
+The output is `dist/`. The build copies `index.html` to `404.html` for static hosts. Cloudflare Workers uses the committed `wrangler.jsonc` SPA fallback; no `_redirects` rule is needed.
 
 ## Cloudflare Pages
 
@@ -17,7 +17,7 @@ The output is `dist/`. The build copies `index.html` to `404.html` for static ho
 - Node version: 20 or later
 - Secrets: none
 
-Cloudflare reads `_redirects`, so `/songbook/demo-1` resolves to the SPA and React Router handles it.
+Wrangler reads `wrangler.jsonc`, where `assets.not_found_handling` is set to `single-page-application`, so `/songbook/demo-1` resolves to the SPA and React Router handles it.
 
 ## GitHub Pages
 

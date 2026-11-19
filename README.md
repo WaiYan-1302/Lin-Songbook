@@ -67,7 +67,7 @@ User songs and saved progressions live in IndexedDB. Small preferences live in l
 5. Output directory: `dist`
 6. Leave environment variables empty.
 
-`public/_redirects` supplies the SPA deep-link fallback. All audio is deployed from local static assets; the app makes no runtime request to GitHub.
+`wrangler.jsonc` supplies the SPA deep-link fallback for Cloudflare Workers static assets. All audio is deployed from local static assets; the app makes no runtime request to GitHub.
 
 Vercel can deploy the same `dist` output. GitHub Pages can use `vite build --base=/REPOSITORY_NAME/`; the build also emits `404.html` for SPA deep links, and the router uses Vite’s base path.
 
