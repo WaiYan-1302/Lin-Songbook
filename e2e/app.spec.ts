@@ -16,6 +16,17 @@ test('mobile library has no document-level horizontal overflow', async ({ page }
   expect(overflow).toBe(false)
 })
 
+test('bundled songbook entries can be deleted persistently', async ({ page }) => {
+  await page.goto('/songbook')
+  const song = page.locator('.library-row').filter({ hasText: 'Lanterns at Low Tide' })
+  await expect(song).toBeVisible()
+  page.once('dialog', dialog => dialog.accept())
+  await song.getByRole('button', { name: 'Delete Lanterns at Low Tide' }).click()
+  await expect(song).not.toBeAttached()
+  await page.reload()
+  await expect(page.getByText('Lanterns at Low Tide', { exact: true })).not.toBeAttached()
+})
+
 test('desktop navigation can be hidden and restored', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 })
   await page.goto('/')

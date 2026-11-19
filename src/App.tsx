@@ -19,23 +19,33 @@ export default function App() {
   const [userSongs, setUserSongs] = useState<Song[]>([])
   const [favorites, setFavorites] = useState<string[]>(() => prefs.get('favorites', ['demo-1']))
   const [recent, setRecent] = useState<string[]>(() => prefs.get('recent', []))
+  const [deletedSongIds, setDeletedSongIds] = useState<string[]>(() => prefs.get('deleted-song-ids', []))
 
   useEffect(() => { getUserSongs().then(setUserSongs) }, [])
   useEffect(() => { prefs.set('favorites', favorites) }, [favorites])
+  useEffect(() => { prefs.set('deleted-song-ids', deletedSongIds) }, [deletedSongIds])
 
   const songs = useMemo(() => {
-    const byId = new Map(demoSongs.map(song => [song.id, song]))
+    const byId = new Map(demoSongs.filter(song => !deletedSongIds.includes(song.id)).map(song => [song.id, song]))
     userSongs.forEach(song => byId.set(song.id, song))
     return [...byId.values()].sort((a, b) => recent.indexOf(a.id) === -1 ? 1 : recent.indexOf(b.id) === -1 ? -1 : recent.indexOf(a.id) - recent.indexOf(b.id))
-  }, [userSongs, recent])
+  }, [userSongs, recent, deletedSongIds])
 
   const save = async (song: Song) => {
     await saveSong(song)
     setUserSongs(items => [...items.filter(item => item.id !== song.id), song])
+    setDeletedSongIds(items => items.filter(id => id !== song.id))
   }
   const remove = async (id: string) => {
     await deleteSong(id)
     setUserSongs(items => items.filter(song => song.id !== id))
+    setDeletedSongIds(items => items.includes(id) ? items : [...items, id])
+    setFavorites(items => items.filter(item => item !== id))
+    setRecent(items => {
+      const next = items.filter(item => item !== id)
+      prefs.set('recent', next)
+      return next
+    })
   }
   const importSong = async (source: string) => {
     try {
