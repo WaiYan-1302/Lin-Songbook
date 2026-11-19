@@ -1,0 +1,702 @@
+{
+  "id": "meta-steel-guitar",
+  "source": "https://raw.githubusercontent.com/facebookincubator/Meta-open-sound/main/systems/instruments/meta-steel-guitar/manifest.json",
+  "license": "CC0-1.0",
+  "generatedAt": "2026-11-19T15:47:53.571Z",
+  "strategy": "Physical-string-specific samples, velocity layer 2, frets 0–12",
+  "samples": [
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 45,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_A2_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_A2_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 57,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_A3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_A3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 46,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_As2_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_As2_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 47,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_B2_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_B2_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 48,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_C3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_C3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 49,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_Cs3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_Cs3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 50,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_D3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_D3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 51,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_Ds3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_Ds3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 52,
+      "fret": 7,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_E3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_E3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 53,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_F3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_F3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 54,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_Fs3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_Fs3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 55,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_G3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_G3_01.ogg"
+    },
+    {
+      "stringName": "A",
+      "stringIndex": 1,
+      "velocity": 2,
+      "midi": 56,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringA_Vel02_Gs3_01.wav",
+      "file": "INSGuitarSteel_StringA_Vel02_Gs3_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 69,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_A4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_A4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 70,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_As4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_As4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 59,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_B3_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_B3_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 71,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_B4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_B4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 60,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_C4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_C4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 61,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_Cs4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_Cs4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 62,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_D4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_D4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 63,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_Ds4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_Ds4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 64,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_E4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_E4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 65,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_F4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_F4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 66,
+      "fret": 7,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_Fs4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_Fs4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 67,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_G4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_G4_01.ogg"
+    },
+    {
+      "stringName": "B",
+      "stringIndex": 4,
+      "velocity": 2,
+      "midi": 68,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringB_Vel02_Gs4_01.wav",
+      "file": "INSGuitarSteel_StringB_Vel02_Gs4_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 57,
+      "fret": 7,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_A3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_A3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 58,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_As3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_As3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 59,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_B3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_B3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 60,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_C4_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_C4_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 61,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_Cs4_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_Cs4_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 50,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_D3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_D3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 62,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_D4_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_D4_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 51,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_Ds3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_Ds3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 52,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_E3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_E3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 53,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_F3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_F3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 54,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_Fs3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_Fs3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 55,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_G3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_G3_01.ogg"
+    },
+    {
+      "stringName": "D",
+      "stringIndex": 2,
+      "velocity": 2,
+      "midi": 56,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringD_Vel02_Gs3_01.wav",
+      "file": "INSGuitarSteel_StringD_Vel02_Gs3_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 57,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_A3_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_A3_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 58,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_As3_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_As3_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 59,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_B3_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_B3_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 60,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_C4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_C4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 61,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_Cs4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_Cs4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 62,
+      "fret": 7,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_D4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_D4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 63,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_Ds4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_Ds4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 64,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_E4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_E4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 65,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_F4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_F4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 66,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_Fs4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_Fs4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 55,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_G3_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_G3_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 67,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_G4_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_G4_01.ogg"
+    },
+    {
+      "stringName": "G",
+      "stringIndex": 3,
+      "velocity": 2,
+      "midi": 56,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringG_Vel02_Gs3_01.wav",
+      "file": "INSGuitarSteel_StringG_Vel02_Gs3_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 69,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_A4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_A4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 70,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_As4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_As4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 71,
+      "fret": 7,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_B4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_B4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 72,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_C5_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_C5_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 73,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_Cs5_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_Cs5_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 74,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_D5_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_D5_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 75,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_Ds5_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_Ds5_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 64,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_E4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_E4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 76,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_E5_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_E5_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 65,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_F4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_F4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 66,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_Fs4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_Fs4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 67,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_G4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_G4_01.ogg"
+    },
+    {
+      "stringName": "HighE",
+      "stringIndex": 5,
+      "velocity": 2,
+      "midi": 68,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringHighE_Vel02_Gs4_01.wav",
+      "file": "INSGuitarSteel_StringHighE_Vel02_Gs4_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 45,
+      "fret": 5,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_A2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_A2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 46,
+      "fret": 6,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_As2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_As2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 48,
+      "fret": 8,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_C3_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_C3_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 49,
+      "fret": 9,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_Cs3_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_Cs3_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 50,
+      "fret": 10,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_D3_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_D3_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 51,
+      "fret": 11,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_Ds3_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_Ds3_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 40,
+      "fret": 0,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_E2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_E2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 52,
+      "fret": 12,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_E3_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_E3_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 41,
+      "fret": 1,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_F2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_F2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 42,
+      "fret": 2,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_Fs2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_Fs2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 43,
+      "fret": 3,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_G2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_G2_01.ogg"
+    },
+    {
+      "stringName": "LowE",
+      "stringIndex": 0,
+      "velocity": 2,
+      "midi": 44,
+      "fret": 4,
+      "sourceFile": "INSGuitarSteel_StringLowE_Vel02_Gs2_01.wav",
+      "file": "INSGuitarSteel_StringLowE_Vel02_Gs2_01.ogg"
+    }
+  ]
+}

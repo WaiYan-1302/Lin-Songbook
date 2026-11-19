@@ -1,0 +1,13 @@
+import { Database, Moon, RotateCcw, Sun, Volume2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { guitarAudio } from '../audio/GuitarAudioEngine'
+import { prefs } from '../storage/library'
+
+export function SettingsPage() {
+  const [dark, setDark] = useState(() => prefs.get('dark', false))
+  const [volume, setVolume] = useState(() => prefs.get('volume', -8))
+  const [motion, setMotion] = useState(() => prefs.get('motion', true))
+  useEffect(() => { document.documentElement.dataset.theme = dark ? 'dark' : 'light'; prefs.set('dark', dark) }, [dark])
+  useEffect(() => { guitarAudio.setVolume(volume); prefs.set('volume', volume) }, [volume])
+  return <div className="page settings-page"><div className="page-title-row"><div><p className="eyebrow">Make it yours</p><h1>Settings</h1><p>Preferences are stored only in this browser.</p></div></div><div className="settings-list"><section><div className="setting-icon">{dark ? <Moon /> : <Sun />}</div><div><h2>Appearance</h2><p>Switch between warm paper and a low-light studio theme.</p></div><button className="toggle" aria-pressed={dark} onClick={() => setDark(v => !v)}><span /></button></section><section><div className="setting-icon"><Volume2 /></div><div><h2>Master guitar volume</h2><p>{volume} dB · applies to recorded acoustic samples.</p></div><input type="range" min="-30" max="0" value={volume} onChange={e => setVolume(Number(e.target.value))} /></section><section><div className="setting-icon"><Moon /></div><div><h2>Motion</h2><p>Use gentle transitions and string vibration feedback.</p></div><button className="toggle" aria-pressed={motion} onClick={() => { setMotion(v => !v); prefs.set('motion', !motion); document.documentElement.classList.toggle('reduce-motion', motion) }}><span /></button></section><section><div className="setting-icon"><Database /></div><div><h2>Local library</h2><p>User songs and progressions use IndexedDB. They do not sync between devices.</p></div><button className="button ghost" onClick={() => alert('Use each song’s export button or browser storage tools to back up local content.')}>Storage info</button></section><section><div className="setting-icon"><RotateCcw /></div><div><h2>Reset preferences</h2><p>Leaves your songs and progressions untouched.</p></div><button className="button ghost" onClick={() => { Object.keys(localStorage).filter(key => key.startsWith('fv:')).forEach(key => localStorage.removeItem(key)); location.reload() }}>Reset</button></section></div><div className="license-note"><strong>Audio source</strong><p>Meta Open Sound — Meta Steel Guitar, CC0-1.0. Samples are prepared locally and served with the static app.</p></div></div>
+}

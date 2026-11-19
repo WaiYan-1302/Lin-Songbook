@@ -1,0 +1,25 @@
+import { expect, test } from '@playwright/test'
+
+test('opens demo song and selects an actual C chord', async ({ page }) => {
+  await page.goto('/songbook/demo-1')
+  await expect(page.getByRole('heading', { name: 'Lanterns at Low Tide' })).toBeVisible()
+  const sampleResponse = page.waitForResponse(response => response.url().endsWith('.ogg'))
+  await page.getByRole('button', { name: 'C', exact: true }).first().click()
+  expect((await sampleResponse).ok()).toBe(true)
+  await expect(page.getByRole('img', { name: 'C chord diagram' })).toBeVisible()
+  await expect(page.getByText('Acoustic samples ready')).toBeAttached()
+})
+
+test('mobile library has no document-level horizontal overflow', async ({ page }) => {
+  await page.goto('/songbook')
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  expect(overflow).toBe(false)
+})
+
+test('Chord Lab marks only fretted and muted strings', async ({ page }) => {
+  await page.goto('/chord-lab?chord=Cadd9')
+  await expect(page.getByRole('heading', { name: 'Cadd9', exact: true })).toBeVisible()
+  await expect(page.locator('.fretboard button[data-active="true"]')).toHaveCount(3)
+  await expect(page.locator('.fretboard button.open-position[data-active="true"]')).toHaveCount(0)
+  await expect(page.locator('.fretboard .fret-row.muted')).toHaveCount(1)
+})
