@@ -2,7 +2,7 @@ import { parseChordPro } from '../music/chordParser'
 
 const sources = [
 `{title: Lanterns at Low Tide}
-{artist: Fret & Verse Sessions}
+{artist: Lin's Songbook Sessions}
 {key: C}
 {tempo: 82}
 {time: 4/4}

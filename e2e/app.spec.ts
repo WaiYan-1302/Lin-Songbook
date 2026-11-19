@@ -16,6 +16,17 @@ test('mobile library has no document-level horizontal overflow', async ({ page }
   expect(overflow).toBe(false)
 })
 
+test('desktop navigation can be hidden and restored', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await page.goto('/')
+  await expect(page).toHaveTitle("Lin's Songbook")
+  await expect(page.getByText("Lin's Songbook", { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Hide navigation' }).click()
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).not.toBeAttached()
+  await page.getByRole('button', { name: 'Show navigation' }).click()
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible()
+})
+
 test('Chord Lab marks only fretted and muted strings', async ({ page }) => {
   await page.goto('/chord-lab?chord=Cadd9')
   await expect(page.getByRole('heading', { name: 'Cadd9', exact: true })).toBeVisible()
