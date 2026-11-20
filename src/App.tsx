@@ -21,7 +21,13 @@ export default function App() {
   const [recent, setRecent] = useState<string[]>(() => prefs.get('recent', []))
   const [deletedSongIds, setDeletedSongIds] = useState<string[]>(() => prefs.get('deleted-song-ids', []))
 
-  useEffect(() => { getUserSongs().then(setUserSongs) }, [])
+  useEffect(() => {
+    let active = true
+    const refreshSongs = () => { getUserSongs().then(songs => { if (active) setUserSongs(songs) }) }
+    refreshSongs()
+    window.addEventListener('focus', refreshSongs)
+    return () => { active = false; window.removeEventListener('focus', refreshSongs) }
+  }, [])
   useEffect(() => { prefs.set('favorites', favorites) }, [favorites])
   useEffect(() => { prefs.set('deleted-song-ids', deletedSongIds) }, [deletedSongIds])
 

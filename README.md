@@ -37,7 +37,7 @@ npm run test:e2e
 - A safe ChordPro-compatible parser for metadata, sections, comments, blank lines, inline chords, and malformed-token errors.
 - Structured chord-over-lyric rendering without inserted spacing or unsafe HTML.
 - Song transposition, slash-chord bass transposition, capo/sounding-pitch distinction, font size, autoscroll, favorites, fullscreen, import, export, editing, and backup.
-- IndexedDB song/progression storage and localStorage preferences, favorites, recent songs, and progression drafts.
+- Local-first IndexedDB song/progression storage with optional private-code cloud sync for songs across devices.
 - `@tombatossals/chords-db` adapter with multiple voicings and one normalized low-E-to-high-E model.
 - Reusable custom SVG chord diagram with muted/open strings, finger numbers, base-fret labels, and tappable strings.
 - Sample-backed guitar playback for individual strings, down/up strums, and arpeggios. Audio nodes initialize only after a user gesture.
@@ -56,7 +56,7 @@ See [Audio setup](docs/AUDIO_SETUP.md) and the generated `public/audio/guitar/st
 
 ## Storage and privacy
 
-User songs and saved progressions live in IndexedDB. Small preferences live in localStorage. Nothing is sent to a server. Browser-local data does **not** synchronize between devices; use the Songbook **Backup** control to export user songs as JSON.
+User songs and saved progressions live in IndexedDB, so they continue to work offline. In Settings, users can optionally create a private sync code; user-created songs are then mirrored to Cloudflare D1 and can be shared with another device using the same code. The code is the key to that library and should be kept private. Small preferences remain in localStorage.
 
 ## Cloudflare Pages
 

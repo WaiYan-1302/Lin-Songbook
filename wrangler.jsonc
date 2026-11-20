@@ -2,8 +2,15 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "lin-songbook",
   "compatibility_date": "2026-11-19",
+  "main": "./worker/index.js",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application"
-  }
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "lin-songbook-data",
+    "database_id": "5c76980f-db3b-4798-b1ed-f7cf6ed48060"
+  }]
 }

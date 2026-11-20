@@ -17,7 +17,7 @@ The output is `dist/`. The build copies `index.html` to `404.html` for static ho
 - Node version: 20 or later
 - Secrets: none
 
-Wrangler reads `wrangler.jsonc`, where `assets.not_found_handling` is set to `single-page-application`, so `/songbook/demo-1` resolves to the SPA and React Router handles it.
+Wrangler reads `wrangler.jsonc`, where the Worker serves the built assets and handles the `/api/songs` cloud-sync API. Apply D1 migrations before the first deployment with `npx wrangler d1 migrations apply lin-songbook-data --remote`. The asset binding keeps `single-page-application` fallback behavior, so `/songbook/demo-1` still resolves to the SPA.
 
 ## GitHub Pages
 
