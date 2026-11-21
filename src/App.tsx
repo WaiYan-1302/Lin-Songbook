@@ -13,6 +13,7 @@ const SongReaderPage = lazy(() => import('./pages/SongReaderPage').then(module =
 const ChordLabPage = lazy(() => import('./pages/ChordLabPage').then(module => ({ default: module.ChordLabPage })))
 const ChordWheelPage = lazy(() => import('./pages/ChordWheelPage').then(module => ({ default: module.ChordWheelPage })))
 const ProgressionsPage = lazy(() => import('./pages/ProgressionsPage').then(module => ({ default: module.ProgressionsPage })))
+const GuitarTunerPage = lazy(() => import('./pages/GuitarTunerPage').then(module => ({ default: module.GuitarTunerPage })))
 const SettingsPage = lazy(() => import('./pages/SettingsPage').then(module => ({ default: module.SettingsPage })))
 
 export default function App() {
@@ -87,6 +88,7 @@ export default function App() {
         <Route path="chord-lab" element={<ChordLabPage />} />
         <Route path="chord-wheel" element={<ChordWheelPage />} />
         <Route path="progressions" element={<ProgressionsPage />} />
+        <Route path="tuner" element={<GuitarTunerPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route></Routes>

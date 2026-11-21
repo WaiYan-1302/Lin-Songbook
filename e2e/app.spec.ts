@@ -64,3 +64,13 @@ test('song roadmap shows diagrams and saves a custom section', async ({ page }) 
   await expect(solo.getByRole('img', { name: 'G chord diagram' })).toBeVisible()
   await expect(solo.getByRole('img', { name: 'C chord diagram' })).toBeVisible()
 })
+
+test('guitar tuner is available without layout overflow', async ({ page }) => {
+  await page.goto('/tuner')
+  await expect(page.getByRole('heading', { name: 'Guitar tuner' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Start tuning' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Auto Nearest' })).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.getByRole('link', { name: 'Tuner' })).toBeVisible()
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  expect(overflow).toBe(false)
+})
