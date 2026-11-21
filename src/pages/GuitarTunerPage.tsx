@@ -1,7 +1,9 @@
 import { Mic, MicOff, ShieldCheck, SlidersHorizontal, Volume2 } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { describePitch, detectPitch } from '../audio/pitchDetection'
+import { createAudioContext } from '../audio/audioContext'
 import { GUITAR_TUNINGS, noteFrequency } from '../music/guitarTunings'
+import { ToolsSwitcher } from '../components/ToolsSwitcher'
 
 type ListeningState = 'idle' | 'requesting' | 'listening' | 'error'
 
@@ -37,7 +39,7 @@ export function GuitarTunerPage() {
     let stream: MediaStream | null = null
     try {
       stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false }, video: false })
-      const context = new AudioContext({ latencyHint: 'interactive' })
+      const context = createAudioContext({ latencyHint: 'interactive' })
       await context.resume()
       const analyser = context.createAnalyser()
       analyser.fftSize = 8192
@@ -98,6 +100,7 @@ export function GuitarTunerPage() {
   const direction = !frequency ? 'Play one open string' : inTune ? 'In tune' : cents < 0 ? 'Tune up' : 'Tune down'
 
   return <div className="page tuner-page">
+    <ToolsSwitcher />
     <div className="page-title-row"><div><p className="eyebrow">Microphone tuner</p><h1>Guitar tuner</h1><p>Choose a tuning, then play one string at a time. Fretbook listens only on this device and guides each string to its target pitch.</p></div><div className="tuner-privacy"><ShieldCheck /><span>Audio stays on this device</span></div></div>
     <div className="tuner-layout">
       <section className={`tuner-display${inTune ? ' in-tune' : ''}`} aria-live="polite">

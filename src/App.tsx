@@ -14,6 +14,8 @@ const ChordLabPage = lazy(() => import('./pages/ChordLabPage').then(module => ({
 const ChordWheelPage = lazy(() => import('./pages/ChordWheelPage').then(module => ({ default: module.ChordWheelPage })))
 const ProgressionsPage = lazy(() => import('./pages/ProgressionsPage').then(module => ({ default: module.ProgressionsPage })))
 const GuitarTunerPage = lazy(() => import('./pages/GuitarTunerPage').then(module => ({ default: module.GuitarTunerPage })))
+const ToolsPage = lazy(() => import('./pages/ToolsPage').then(module => ({ default: module.ToolsPage })))
+const MetronomePage = lazy(() => import('./pages/MetronomePage').then(module => ({ default: module.MetronomePage })))
 const TabEditorPage = lazy(() => import('./pages/TabEditorPage').then(module => ({ default: module.TabEditorPage })))
 const SettingsPage = lazy(() => import('./pages/SettingsPage').then(module => ({ default: module.SettingsPage })))
 
@@ -89,7 +91,11 @@ export default function App() {
         <Route path="chord-lab" element={<ChordLabPage />} />
         <Route path="chord-wheel" element={<ChordWheelPage />} />
         <Route path="progressions" element={<ProgressionsPage />} />
-        <Route path="tuner" element={<GuitarTunerPage />} />
+        <Route path="tools" element={<ToolsPage />} />
+        <Route path="tools/tuner" element={<GuitarTunerPage />} />
+        <Route path="tools/metronome" element={<MetronomePage />} />
+        <Route path="tuner" element={<Navigate to="/tools/tuner" replace />} />
+        <Route path="metronome" element={<Navigate to="/tools/metronome" replace />} />
         <Route path="tab-editor" element={<TabEditorPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />

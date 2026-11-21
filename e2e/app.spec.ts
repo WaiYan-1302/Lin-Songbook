@@ -67,13 +67,37 @@ test('song roadmap shows diagrams and saves a custom section', async ({ page }) 
 
 test('guitar tuner is available without layout overflow', async ({ page }) => {
   await page.goto('/tuner')
+  await expect(page).toHaveURL(/\/tools\/tuner$/)
   await expect(page.getByRole('heading', { name: 'Guitar tuner' })).toBeVisible()
   await expect(page.getByRole('button', { name: 'Start tuning' })).toBeVisible()
   await expect(page.getByRole('button', { name: 'Auto Nearest' })).toHaveAttribute('aria-pressed', 'true')
   await page.getByLabel('Tuning preset').selectOption('drop-d')
   await expect(page.getByText('D A D G B E', { exact: true })).toBeVisible()
   await expect(page.getByRole('button', { name: 'D2 73.4 Hz' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Tuner' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Tools', exact: true })).toBeVisible()
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  expect(overflow).toBe(false)
+})
+
+test('tools hub opens a configurable metronome', async ({ page }, testInfo) => {
+  await page.goto('/tools')
+  await expect(page.getByRole('heading', { name: 'Tools' })).toBeVisible()
+  await page.getByRole('link', { name: /Open metronome/ }).click()
+  await expect(page.getByRole('heading', { name: 'Metronome' })).toBeVisible()
+  await page.getByLabel('BPM').fill('120')
+  await page.getByLabel('Beats per bar', { exact: true }).selectOption('3')
+  const snare = page.locator('.sound-picker label').filter({ hasText: 'Snare' })
+  await snare.click()
+  await expect(snare.locator('input')).toBeChecked()
+  await expect(page.locator('.beat-dots i')).toHaveCount(3)
+  await expect(page.getByText('120', { exact: true })).toBeVisible()
+  if (testInfo.project.name === 'desktop') {
+    await page.getByRole('button', { name: 'Start' }).click()
+    await expect(page.getByRole('button', { name: 'Stop' })).toBeVisible()
+  } else {
+    await page.getByRole('button', { name: 'Start' }).click()
+    await expect(page.getByRole('alert')).toContainText('Web Audio')
+  }
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
   expect(overflow).toBe(false)
 })

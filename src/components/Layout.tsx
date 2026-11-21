@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { AudioLines, BookOpenText, CircleDot, FileMusic, Guitar, Home, ListMusic, PanelLeftClose, PanelLeftOpen, Settings, Sparkles } from 'lucide-react'
+import { BookOpenText, CircleDot, FileMusic, Guitar, Home, ListMusic, PanelLeftClose, PanelLeftOpen, Settings, Sparkles, Wrench } from 'lucide-react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const items = [
-  ['/', 'Home', Home], ['/songbook', 'Songbook', BookOpenText], ['/tab-editor', 'Tab Editor', FileMusic], ['/tuner', 'Tuner', AudioLines], ['/chord-lab', 'Chord Lab', Guitar],
+  ['/', 'Home', Home], ['/songbook', 'Songbook', BookOpenText], ['/tab-editor', 'Tab Editor', FileMusic], ['/tools', 'Tools', Wrench], ['/chord-lab', 'Chord Lab', Guitar],
   ['/chord-wheel', 'Chord Wheel', CircleDot], ['/progressions', 'Progressions', ListMusic], ['/settings', 'Settings', Settings],
 ] as const
-const mobileItems = items.filter(([to]) => ['/', '/songbook', '/tab-editor', '/tuner', '/chord-lab', '/progressions'].includes(to))
+const mobileItems = items.filter(([to]) => ['/', '/songbook', '/tab-editor', '/tools', '/chord-lab', '/progressions'].includes(to))
 
 export function Layout() {
   const [sidebarHidden, setSidebarHidden] = useState(() => localStorage.getItem('fv:sidebar-hidden') === 'true')
