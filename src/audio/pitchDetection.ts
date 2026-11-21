@@ -1,6 +1,6 @@
 export type PitchResult = { frequency: number; confidence: number; level: number }
 
-export function detectPitch(samples: Float32Array, sampleRate: number, minFrequency = 65, maxFrequency = 420): PitchResult | null {
+export function detectPitch(samples: Float32Array, sampleRate: number, minFrequency = 55, maxFrequency = 420): PitchResult | null {
   let energy = 0
   for (const sample of samples) energy += sample * sample
   const level = Math.sqrt(energy / samples.length)
