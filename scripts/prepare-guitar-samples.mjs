@@ -16,7 +16,7 @@ function parseFile(file) {
 }
 
 async function fetchOk(url) {
-  const response = await fetch(url, { headers: { 'User-Agent': 'lins-songbook-sample-preparer' } })
+  const response = await fetch(url, { headers: { 'User-Agent': 'fretbook-sample-preparer' } })
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`)
   return response
 }

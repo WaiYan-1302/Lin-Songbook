@@ -3,14 +3,15 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AudioStatus } from '../components/AudioStatus'
 import { ChordDiagram } from '../components/ChordDiagram'
+import { SongProgressionRoadmap } from '../components/SongProgressionRoadmap'
 import { guitarAudio } from '../audio/GuitarAudioEngine'
 import { getVoicings } from '../music/chordDatabase'
 import { transposeChord, transposeKey } from '../music/transposition'
 import { voicingNotes } from '../music/guitarTuning'
 import type { GuitarVoicing, Song } from '../types'
 
-type Props = { songs: Song[]; favorites: string[]; onToggleFavorite: (id: string) => void; onOpen: (id: string) => void }
-export function SongReaderPage({ songs, favorites, onToggleFavorite, onOpen }: Props) {
+type Props = { songs: Song[]; favorites: string[]; onToggleFavorite: (id: string) => void; onOpen: (id: string) => void; onSave: (song: Song) => Promise<void> }
+export function SongReaderPage({ songs, favorites, onToggleFavorite, onOpen, onSave }: Props) {
   const { id } = useParams()
   const song = songs.find(item => item.id === id)
   const [transpose, setTranspose] = useState(0)
@@ -44,6 +45,7 @@ export function SongReaderPage({ songs, favorites, onToggleFavorite, onOpen }: P
       <label className="speed-control">Speed <input type="range" min="0.4" max="6" step="0.2" value={speed} onChange={e => setSpeed(Number(e.target.value))} /></label>
       <AudioStatus />
     </div>
+    <SongProgressionRoadmap song={song} transpose={transpose} onChord={selectChord} onSave={onSave} />
     <div className="reader-layout"><article className="chord-sheet" style={{ '--sheet-font-size': `${fontSize}px` } as React.CSSProperties}>{song.sections.map((section, sectionIndex) => <section key={sectionIndex}><h2>{section.label}</h2>{section.lines.map((line, lineIndex) => line.type === 'blank' ? <div className="sheet-blank" key={lineIndex} /> : line.type === 'comment' ? <p className="sheet-comment" key={lineIndex}>{line.text}</p> : <div className="lyric-line" key={lineIndex}>{line.segments.map((segment, segmentIndex) => { const display = segment.chord ? transposeChord(segment.chord, transpose) : ''; return <span className="lyric-segment" key={segmentIndex}><button className={display === selected ? 'lyric-chord selected' : 'lyric-chord'} onClick={() => segment.chord && selectChord(segment.chord)}>{display || '\u00a0'}</button><span>{segment.lyric || '\u00a0'}</span></span> })}</div>)}</section>)}</article>
       <aside className="chord-panel">{voicing ? <><div className="panel-top"><div><p className="eyebrow">Selected chord</p><h2>{selected}</h2></div><button className="round-play" onClick={() => guitarAudio.playChord(capoVoicing(voicing, capo))}><Play size={18} fill="currentColor" /></button></div><ChordDiagram voicing={voicing} size="large" onString={index => guitarAudio.playString(index, voicing.frets[index] + capo, .75)} /><div className="note-pills">{voicingNotes(voicing, capo).map((note, i) => <span key={i}>{note}</span>)}</div><p className="capo-note">Shape {selected}{capo ? ` with capo ${capo}` : ''} · physical frets {voicing.frets.map(f => f < 0 ? '×' : f + capo).join(' ')}</p><div className="strum-row"><button onClick={() => guitarAudio.playChord(capoVoicing(voicing, capo), 'down')}>↓ Down</button><button onClick={() => guitarAudio.playChord(capoVoicing(voicing, capo), 'up')}>↑ Up</button><button onClick={() => guitarAudio.playArpeggio(capoVoicing(voicing, capo))}>Arpeggio</button></div>{voicings.length > 1 && <div className="voicing-nav"><button onClick={() => setVoicingIndex(v => (v - 1 + voicings.length) % voicings.length)}><ChevronLeft /></button><span>Voicing {voicingIndex + 1} of {voicings.length}</span><button onClick={() => setVoicingIndex(v => (v + 1) % voicings.length)}><ChevronRight /></button></div>}<Link className="button ghost full" to={`/chord-lab?chord=${encodeURIComponent(selected)}`}>Open in Chord Lab</Link></> : <div className="unsupported"><Volume2 /><h2>{selected}</h2><p>No verified guitar voicing is available for this symbol.</p><Link to="/chord-lab">Explore nearby chords</Link></div>}</aside>
     </div>

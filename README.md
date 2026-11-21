@@ -1,6 +1,6 @@
-# Lin's Songbook
+# Fretbook
 
-Lin's Songbook is a static, local-first guitar songbook and harmony notebook. It combines structured ChordPro-style lyrics, physical guitar voicings, recorded steel-string audio, an editable fretboard and tab view, a circle of fifths, and a timed progression builder.
+Fretbook is a local-first guitar songbook and harmony notebook. It combines structured ChordPro-style lyrics, physical guitar voicings, recorded steel-string audio, editable song roadmaps, an editable fretboard and tab view, a circle of fifths, and a timed progression builder.
 
 The name lives primarily in `src/components/Layout.tsx` and `index.html`, so it is easy to rename.
 

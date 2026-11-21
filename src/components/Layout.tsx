@@ -16,7 +16,7 @@ export function Layout() {
 
   return <div className={`app-shell${sidebarHidden ? ' nav-hidden' : ''}`}>
     {!sidebarHidden && <aside className="side-nav">
-      <NavLink to="/" className="brand"><span className="brand-mark"><Sparkles size={19} /></span><span><strong>Lin&apos;s Songbook</strong><small>guitar practice notebook</small></span></NavLink>
+      <NavLink to="/" className="brand"><span className="brand-mark"><Sparkles size={19} /></span><span><strong>Fretbook</strong><small>guitar practice notebook</small></span></NavLink>
       <button className="sidebar-toggle" type="button" onClick={() => setSidebar(true)} aria-label="Hide navigation" title="Hide navigation"><PanelLeftClose /></button>
       <nav aria-label="Main navigation">{items.map(([to, label, Icon]) => <NavLink key={to} to={to} end={to === '/'}><Icon size={20} /><span>{label}</span></NavLink>)}</nav>
       <div className="nav-foot"><span className="status-dot" /> Made for quiet practice</div>

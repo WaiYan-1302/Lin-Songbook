@@ -83,7 +83,7 @@ export default function App() {
         <Route path="songbook" element={<SongbookPage songs={songs} favorites={favorites} onToggleFavorite={toggleFavorite} onImport={importSong} onDelete={remove} />} />
         <Route path="songbook/new" element={<SongEditorPage songs={songs} onSave={save} />} />
         <Route path="songbook/:id/edit" element={<SongEditorPage songs={songs} onSave={save} />} />
-        <Route path="songbook/:id" element={<SongReaderPage songs={songs} favorites={favorites} onToggleFavorite={toggleFavorite} onOpen={open} />} />
+        <Route path="songbook/:id" element={<SongReaderPage songs={songs} favorites={favorites} onToggleFavorite={toggleFavorite} onOpen={open} onSave={save} />} />
         <Route path="chord-lab" element={<ChordLabPage />} />
         <Route path="chord-wheel" element={<ChordWheelPage />} />
         <Route path="progressions" element={<ProgressionsPage />} />

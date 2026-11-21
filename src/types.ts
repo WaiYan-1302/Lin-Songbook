@@ -14,6 +14,7 @@ export type GuitarVoicing = {
 export type SongSegment = { chord?: string; lyric: string }
 export type SongLine = { type: 'lyric' | 'blank' | 'comment'; segments: SongSegment[]; text?: string }
 export type SongSection = { type: 'verse' | 'chorus' | 'bridge' | 'intro' | 'outro' | 'section'; label: string; lines: SongLine[] }
+export type SongProgression = { id: string; label: string; chords: string[] }
 
 export type Song = {
   id: string
@@ -26,6 +27,7 @@ export type Song = {
   tags: string[]
   source: string
   sections: SongSection[]
+  progressions?: SongProgression[]
   userCreated?: boolean
   updatedAt?: number
 }
