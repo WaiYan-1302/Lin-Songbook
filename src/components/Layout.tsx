@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { AudioLines, BookOpenText, CircleDot, Guitar, Home, ListMusic, PanelLeftClose, PanelLeftOpen, Settings, Sparkles } from 'lucide-react'
+import { AudioLines, BookOpenText, CircleDot, FileMusic, Guitar, Home, ListMusic, PanelLeftClose, PanelLeftOpen, Settings, Sparkles } from 'lucide-react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const items = [
-  ['/', 'Home', Home], ['/songbook', 'Songbook', BookOpenText], ['/tuner', 'Tuner', AudioLines], ['/chord-lab', 'Chord Lab', Guitar],
+  ['/', 'Home', Home], ['/songbook', 'Songbook', BookOpenText], ['/tab-editor', 'Tab Editor', FileMusic], ['/tuner', 'Tuner', AudioLines], ['/chord-lab', 'Chord Lab', Guitar],
   ['/chord-wheel', 'Chord Wheel', CircleDot], ['/progressions', 'Progressions', ListMusic], ['/settings', 'Settings', Settings],
 ] as const
+const mobileItems = items.filter(([to]) => ['/', '/songbook', '/tab-editor', '/tuner', '/chord-lab', '/progressions'].includes(to))
 
 export function Layout() {
   const [sidebarHidden, setSidebarHidden] = useState(() => localStorage.getItem('fv:sidebar-hidden') === 'true')
@@ -23,6 +24,6 @@ export function Layout() {
     </aside>}
     {sidebarHidden && <button className="sidebar-reveal" type="button" onClick={() => setSidebar(false)} aria-label="Show navigation" title="Show navigation"><PanelLeftOpen /></button>}
     <main className="main-content"><Outlet /></main>
-    <nav className="bottom-nav" aria-label="Mobile navigation">{items.slice(0, 6).map(([to, label, Icon]) => <NavLink key={to} to={to} end={to === '/'} aria-label={label}><Icon size={21} /><span>{label === 'Progressions' ? 'Progress' : label === 'Chord Lab' ? 'Chords' : label === 'Chord Wheel' ? 'Wheel' : label}</span></NavLink>)}</nav>
+    <nav className="bottom-nav" aria-label="Mobile navigation">{mobileItems.map(([to, label, Icon]) => <NavLink key={to} to={to} end={to === '/'} aria-label={label}><Icon size={21} /><span>{label === 'Progressions' ? 'Progress' : label === 'Chord Lab' ? 'Chords' : label === 'Tab Editor' ? 'Tabs' : label}</span></NavLink>)}</nav>
   </div>
 }
